@@ -38,10 +38,10 @@ namespace CarParkCalc
             }
             else if (time > 3 && time < 24)
             {
-                double cpm = (10/60);
+                double cph = 1;
                 //Console.WriteLine(cpm);
                 time = time - 3;
-                return Car.baseFee + time * 6 * cpm;
+                return Car.baseFee + time * cph;
             }
             return 0;
         }
