@@ -1,0 +1,11 @@
+namespace SalarySlip
+{
+    class Analyst:Employee
+    {
+        public Analyst()
+        {
+            medicalAllowance = 800;
+            fuelAllowance = 150;
+        }
+    }
+}

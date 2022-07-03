@@ -1,37 +1,41 @@
 using System;
-namespace SalaryCalc {
-    
-    public static class SalarySlip
+
+namespace SalarySlip
+{
+    class Program
     {
-        public static int GrossSalaryCalculator(string designation, int baseSalary) 
+        static void Main(string[] args)
         {
-            int fuel = 0, medical = 0;
-            if (designation == "ENGINEER")
-            {
-                fuel = 100;
-                medical = 500;
-            }
-            else if (designation == "MANAGER")
-            {
-                fuel = 250;
-                medical = 1000;
-            }
-            else if (designation == "ANALYST")
-            {
-                fuel = 150;
-                medical = 800;
-            }
-            int grossSalary = baseSalary + fuel + medical;
-            return grossSalary;
+            int desig;
+            Console.Write("Select your designation: \n 1-> Engineer \n 2-> Manager \n 3-> Analyst  ");
+            Console.WriteLine();
+            Console.Write("Your Selection: ")
+            desig = Console.ReadLine();
+            Console.WriteLine(" Gross salary is: "+CalcSalary(desig));
+
         }
-        public static void Main(string[] args) {
-            int baseSalary = 1500;
-            string designation;
-            Console.Write("Enter Your Designation: ");
-            designation = Console.ReadLine();
-            designation = designation.ToUpper();
-            int grossSalary = GrossSalaryCalculator(designation,baseSalary);
-            Console.WriteLine($"Gross Salary = {grossSalary}");
+        public static double CalcSalary(int desig)
+        {
+            double salary=0;
+            switch (desig)
+            {
+                case 1:
+                    Engineer myEng = new Engineer();
+                    Salary = myEng.CalculateSalary();
+                    break;
+
+                case 2:
+                    Manager myMng = new Manager();
+                    Salary = myMng.CalculateSalary();
+                    break;
+
+                case 3:
+                    Analyst myAnalyst = new Analyst();
+                    Salary = myAnalyst.CalculateSalary();
+                    break;
+
+            }
+            return Salary;
         }
     }
 }
