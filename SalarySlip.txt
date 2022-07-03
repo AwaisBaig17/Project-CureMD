@@ -1,0 +1,37 @@
+using System;
+namespace SalaryCalc {
+    
+    public static class SalarySlip
+    {
+        public static int GrossSalaryCalculator(string designation, int baseSalary) 
+        {
+            int fuel = 0, medical = 0;
+            if (designation == "ENGINEER")
+            {
+                fuel = 100;
+                medical = 500;
+            }
+            else if (designation == "MANAGER")
+            {
+                fuel = 250;
+                medical = 1000;
+            }
+            else if (designation == "ANALYST")
+            {
+                fuel = 150;
+                medical = 800;
+            }
+            int grossSalary = baseSalary + fuel + medical;
+            return grossSalary;
+        }
+        public static void Main(string[] args) {
+            int baseSalary = 1500;
+            string designation;
+            Console.Write("Enter Your Designation: ");
+            designation = Console.ReadLine();
+            designation = designation.ToUpper();
+            int grossSalary = GrossSalaryCalculator(designation,baseSalary);
+            Console.WriteLine($"Gross Salary = {grossSalary}");
+        }
+    }
+}
